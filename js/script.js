@@ -1,30 +1,30 @@
-const mario = document.querySelector('.mario');
+const player = document.querySelector('.player');
 const pipe = document.querySelector('.pipe')
 
 
 const jump = () => {
-    mario.classList.add('jump');
+    player.classList.add('jump');
 
     setTimeout(() => {
-        mario.classList.remove('jump');
+        player.classList.remove('jump');
     }, 500);
 }
 
 const loop = setInterval(() => {
     const pipePosition = pipe.offsetLeft;
-    const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '');
+    const playerPosition = +window.getComputedStyle(player).bottom.replace('px', '');
 
-    if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 60) {
+    if (pipePosition <= 120 && pipePosition > 0 && playerPosition < 60) {
 
         pipe.style.animation = 'none';
         pipe.style.left = `${pipePosition}px`;
 
-        mario.style.animation = 'none';
-        mario.style.bottom = `${marioPosition}px`;
+        player.style.animation = 'none';
+        player.style.bottom = `${playerPosition}px`;
 
-        mario.src = './images/game-over.png';
-        mario.style.width = '65px'
-        mario.style.marginLeft = '50px'
+        player.src = './images/game_over.png';
+        player.style.width = '65px'
+        player.style.marginLeft = '50px'
 
         clearInterval(loop);
 
