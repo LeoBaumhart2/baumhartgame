@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+body {
+  background-color: rgb(49, 49, 49);
+  color: #E0F6FF;
+}
+
+
 .game-board{
     width: 100%;
     height: 500px;
@@ -21,6 +27,11 @@
     height: 100px;
     transform: scale(-1, 1);
     animation: pipe-animation 3s infinite linear;
+}
+
+.background {
+  width: 100%;
+  height: 100%;
 }
 
 .player{
